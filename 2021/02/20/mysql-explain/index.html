@@ -91,19 +91,19 @@
 
 
 
-<meta name="description" content="通常我们在优化Mysql语句时会使用explain关键字，它是MySQL 提供的对 SELECT 语句进行分析并输出 SELECT 执行的详细信息的命令，其输出结果如下图：  结果字段释义如下：    字段 含义 说明     id SELECT 查询的标识符，每个 SELECT 都会自动分配一个唯一的标识符 id大的先执行，id相等由上到下执行   select_type SELECT 查询的类">
+<meta name="description" content="通常我们在优化Mysql语句时会使用explain关键字，它是MySQL 提供的对 SELECT 语句进行分析并输出 SELECT 执行的详细信息的命令，其输出结果如下图：  explain结果   字段 含义 说明     id SELECT 查询的标识符，每个 SELECT 都会自动分配一个唯一的标识符 id大的先执行，id相等由上到下执行   select_type SELECT 查询的类型">
 <meta name="keywords" content="Mysql,explain">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql系列 - explain">
 <meta property="og:url" content="http://runnerliu.github.io/2021/02/20/mysql-explain/index.html">
 <meta property="og:site_name" content="LiuYang&#39;s BLOG">
-<meta property="og:description" content="通常我们在优化Mysql语句时会使用explain关键字，它是MySQL 提供的对 SELECT 语句进行分析并输出 SELECT 执行的详细信息的命令，其输出结果如下图：  结果字段释义如下：    字段 含义 说明     id SELECT 查询的标识符，每个 SELECT 都会自动分配一个唯一的标识符 id大的先执行，id相等由上到下执行   select_type SELECT 查询的类">
+<meta property="og:description" content="通常我们在优化Mysql语句时会使用explain关键字，它是MySQL 提供的对 SELECT 语句进行分析并输出 SELECT 执行的详细信息的命令，其输出结果如下图：  explain结果   字段 含义 说明     id SELECT 查询的标识符，每个 SELECT 都会自动分配一个唯一的标识符 id大的先执行，id相等由上到下执行   select_type SELECT 查询的类型">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://runnerliu.github.io/images/2021-2-20T121509.png">
-<meta property="og:updated_time" content="2021-02-20T04:46:13.220Z">
+<meta property="og:updated_time" content="2021-02-20T04:48:29.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql系列 - explain">
-<meta name="twitter:description" content="通常我们在优化Mysql语句时会使用explain关键字，它是MySQL 提供的对 SELECT 语句进行分析并输出 SELECT 执行的详细信息的命令，其输出结果如下图：  结果字段释义如下：    字段 含义 说明     id SELECT 查询的标识符，每个 SELECT 都会自动分配一个唯一的标识符 id大的先执行，id相等由上到下执行   select_type SELECT 查询的类">
+<meta name="twitter:description" content="通常我们在优化Mysql语句时会使用explain关键字，它是MySQL 提供的对 SELECT 语句进行分析并输出 SELECT 执行的详细信息的命令，其输出结果如下图：  explain结果   字段 含义 说明     id SELECT 查询的标识符，每个 SELECT 都会自动分配一个唯一的标识符 id大的先执行，id相等由上到下执行   select_type SELECT 查询的类型">
 <meta name="twitter:image" content="http://runnerliu.github.io/images/2021-2-20T121509.png">
 
 
@@ -416,8 +416,7 @@
       
         <p>通常我们在优化Mysql语句时会使用explain关键字，它是MySQL 提供的对 SELECT 语句进行分析并输出 SELECT 执行的详细信息的命令，其输出结果如下图：</p>
 <p><img src="/images/2021-2-20T121509.png" alt="2021-2-20T121509.png"></p>
-<p>结果字段释义如下：</p>
-<table>
+<h3 id="explain结果"><a href="#explain结果" class="headerlink" title="explain结果"></a>explain结果</h3><table>
 <thead>
 <tr>
 <th>字段</th>
@@ -487,8 +486,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>select_type</strong></p>
-<table>
+<h3 id="select-type"><a href="#select-type" class="headerlink" title="select_type"></a>select_type</h3><table>
 <thead>
 <tr>
 <th>取值</th>
@@ -526,8 +524,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>type</strong></p>
-<table>
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><table>
 <thead>
 <tr>
 <th>取值</th>
@@ -566,8 +563,7 @@
 </tbody>
 </table>
 <p>效率比较：all&lt; index &lt; range&lt; ref &lt; eq_ref &lt; const &lt; system</p>
-<p><strong>key_len</strong></p>
-<p>表示查询优化器使用了索引的字节数。这个字段可以评估组合索引是否完全被使用，或只有最左部分字段被使用到，key_len 的计算规则如下：</p>
+<h3 id="key-len"><a href="#key-len" class="headerlink" title="key_len"></a>key_len</h3><p>表示查询优化器使用了索引的字节数。这个字段可以评估组合索引是否完全被使用，或只有最左部分字段被使用到，key_len 的计算规则如下：</p>
 <ul>
 <li>字符串<ul>
 <li>char(n)：n 字节长度</li>
@@ -590,8 +586,7 @@
 </li>
 <li>字段属性：NULL 属性占用一个字节，如果一个字段是 NOT NULL 的，则没有此属性。</li>
 </ul>
-<p><strong>rows</strong></p>
-<p>MySQL 查询优化器根据统计信息估算 SQL 要查找到结果集需要扫描读取的数据行数。这个值非常直观显示 SQL 的效率好坏，原则上 rows 越少越好。</p>
+<h3 id="rows"><a href="#rows" class="headerlink" title="rows"></a>rows</h3><p>MySQL 查询优化器根据统计信息估算 SQL 要查找到结果集需要扫描读取的数据行数。这个值非常直观显示 SQL 的效率好坏，原则上 rows 越少越好。</p>
 <p><strong>Extra</strong></p>
 <table>
 <thead>
@@ -729,8 +724,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="william">
           <p class="site-author-name" itemprop="name">william</p>
@@ -840,6 +844,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#explain结果"><span class="nav-number">1.</span> <span class="nav-text">explain结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-type"><span class="nav-number">2.</span> <span class="nav-text">select_type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">3.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key-len"><span class="nav-number">4.</span> <span class="nav-text">key_len</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rows"><span class="nav-number">5.</span> <span class="nav-text">rows</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
