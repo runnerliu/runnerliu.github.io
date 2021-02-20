@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://runnerliu.github.io/2017/07/15/uniqueprimarykey/</loc>
+    
+    <lastmod>2021-02-20T03:36:48.878Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://runnerliu.github.io/2017/08/28/mysqltransaction/</loc>
     
-    <lastmod>2021-02-20T03:30:38.603Z</lastmod>
+    <lastmod>2021-02-20T03:36:09.313Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://runnerliu.github.io/2017/07/15/myisaminnodb/</loc>
+    
+    <lastmod>2021-02-20T03:35:42.437Z</lastmod>
     
   </url>
   
@@ -124,13 +138,6 @@
     <loc>http://runnerliu.github.io/2017/06/22/urlrequestprocess/</loc>
     
     <lastmod>2020-11-15T02:24:39.484Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://runnerliu.github.io/2017/07/15/uniqueprimarykey/</loc>
-    
-    <lastmod>2020-11-15T02:24:39.483Z</lastmod>
     
   </url>
   
@@ -325,13 +332,6 @@
   
   <url>
     <loc>http://runnerliu.github.io/2017/09/03/nginxstartpoweron/</loc>
-    
-    <lastmod>2020-11-15T02:24:39.474Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://runnerliu.github.io/2017/07/15/myisaminnodb/</loc>
     
     <lastmod>2020-11-15T02:24:39.474Z</lastmod>
     
