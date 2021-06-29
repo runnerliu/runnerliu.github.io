@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://runnerliu.github.io/"/>
-  <updated>2021-06-29T15:06:19.725Z</updated>
+  <updated>2021-06-29T15:41:08.833Z</updated>
   <id>http://runnerliu.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GO系列 - 数据类型</title>
+    <link href="http://runnerliu.github.io/2021/06/29/go-datatype/"/>
+    <id>http://runnerliu.github.io/2021/06/29/go-datatype/</id>
+    <published>2021-06-29T15:11:31.000Z</published>
+    <updated>2021-06-29T15:41:08.833Z</updated>
+    
+    <content type="html"><![CDATA[<p>Go 语言按类别有以下几种数据类型：</p><table><thead><tr><th style="text-align:left">序号</th><th style="text-align:left">类型和描述</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left"><strong>布尔型</strong> <br>布尔型的值只可以是常量 true 或者 false。一个简单的例子：var b bool = true。</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left"><strong>数字类型</strong> <br>整型 int 和浮点型 float32、float64，Go 语言支持整型和浮点型数字，并且支持复数，其中位的运算采用补码。</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left"><strong>字符串类型</strong> <br>字符串就是一串固定长度的字符连接起来的字符序列。Go 的字符串是由单个字节连接起来的。Go 语言的字符串的字节使用 UTF-8 编码标识 Unicode 文本。</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left"><strong>派生类型</strong> <br>包括：(a) 指针类型 (b) 数组类型 (c) 结构化类型 (d) Channel 类型 (e) 函数类型 (f) 切片类型 (g) 接口类型 (h) Map 类型</td></tr></tbody></table><h3 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h3><table><thead><tr><th style="text-align:left">序号</th><th style="text-align:left">类型和描述</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left"><strong>uint8</strong> <br>无符号 8 位整型 (0 到 255)</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left"><strong>uint16</strong> <br>无符号 16 位整型 (0 到 65535)</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left"><strong>uint32</strong> <br>无符号 32 位整型 (0 到 4294967295)</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left"><strong>uint64</strong> <br>无符号 64 位整型 (0 到 18446744073709551615)</td></tr><tr><td style="text-align:left">5</td><td style="text-align:left"><strong>int8</strong> <br>有符号 8 位整型 (-128 到 127)</td></tr><tr><td style="text-align:left">6</td><td style="text-align:left"><strong>int16</strong> <br>有符号 16 位整型 (-32768 到 32767)</td></tr><tr><td style="text-align:left">7</td><td style="text-align:left"><strong>int32</strong> <br>有符号 32 位整型 (-2147483648 到 2147483647)</td></tr><tr><td style="text-align:left">8</td><td style="text-align:left"><strong>int64</strong> <br>有符号 64 位整型 (-9223372036854775808 到 9223372036854775807)</td></tr></tbody></table><h3 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h3><table><thead><tr><th style="text-align:left">序号</th><th style="text-align:left">类型和描述</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left"><strong>float32</strong> <br>IEEE-754 32位浮点型数</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left"><strong>float64</strong> <br>IEEE-754 64位浮点型数</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left"><strong>complex64</strong> <br>32 位实数和虚数</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left"><strong>complex128</strong> <br>64 位实数和虚数</td></tr></tbody></table><h3 id="其他数字类型"><a href="#其他数字类型" class="headerlink" title="其他数字类型"></a>其他数字类型</h3><table><thead><tr><th style="text-align:left">序号</th><th style="text-align:left">类型和描述</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left"><strong>byte</strong> <br>类似 uint8</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left"><strong>rune</strong> <br>类似 int32</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left"><strong>uint</strong> <br>32 或 64 位</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left"><strong>int</strong> <br>与 uint 一样大小</td></tr><tr><td style="text-align:left">5</td><td style="text-align:left"><strong>uintptr</strong> <br>无符号整型，用于存放一个指针</td></tr></tbody></table><p>Read More:</p><blockquote><p><a href="https://www.tutorialspoint.com/go/go_data_types.htm" target="_blank" rel="noopener">Go - Data Types</a></p><p><a href="https://www.runoob.com/go/go-data-types.html" target="_blank" rel="noopener">Go 语言数据类型</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Go 语言按类别有以下几种数据类型：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;序号&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;类型和描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tb
+      
+    
+    </summary>
+    
+      <category term="GO" scheme="http://runnerliu.github.io/categories/GO/"/>
+    
+    
+      <category term="GO" scheme="http://runnerliu.github.io/tags/GO/"/>
+    
+  </entry>
   
   <entry>
     <title>Mysql系列 - 数据类型</title>
@@ -536,31 +569,6 @@
       
       
         &lt;p&gt;库地址：&lt;a href=&quot;https://pypi.org/project/watchdog/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pypi&lt;/a&gt; &lt;a href=&quot;https://github.com/gorakhargosh/watchdo
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="http://runnerliu.github.io/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://runnerliu.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python常见异常</title>
-    <link href="http://runnerliu.github.io/2020/11/10/python-except-enum/"/>
-    <id>http://runnerliu.github.io/2020/11/10/python-except-enum/</id>
-    <published>2020-11-10T09:19:12.000Z</published>
-    <updated>2020-11-15T02:24:39.477Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="TypeError"><a href="#TypeError" class="headerlink" title="TypeError"></a>TypeError</h4><p><code>&#39;builtin_function_or_method&#39; object is not subscriptable</code></p><p>此异常一般是上下文代码中有语法错误，缺少()。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;TypeError&quot;&gt;&lt;a href=&quot;#TypeError&quot; class=&quot;headerlink&quot; title=&quot;TypeError&quot;&gt;&lt;/a&gt;TypeError&lt;/h4&gt;&lt;p&gt;&lt;code&gt;&amp;#39;builtin_function_or_method&amp;#39;
       
     
     </summary>
