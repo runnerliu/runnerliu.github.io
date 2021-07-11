@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://runnerliu.github.io/images/2021-7-11151114.png">
 <meta property="og:image" content="http://runnerliu.github.io/images/2021-7-11151153.png">
 <meta property="og:image" content="http://runnerliu.github.io/images/2021-7-11151446.png">
-<meta property="og:updated_time" content="2021-07-11T07:31:08.774Z">
+<meta property="og:updated_time" content="2021-07-11T07:36:03.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="traceroute的实现原理">
 <meta name="twitter:description" content="现实世界中的网络是由无数的计算机和路由器组成的一张的大网，应用的数据包在发送到服务器之前都要经过层层的路由转发。而 traceroute 是一种常规的网络分析工具，用来定位到目标主机之间的所有路由器。 安装traceroute若未安装该命令，需执行以下命令进行安装 1yum install -y traceroute 测试一下 1234567891011[root@test ~]# tracero">
@@ -478,7 +478,7 @@
 </li>
 </ul>
 <p>可以看出与第一种实现相比，区别主要在发送的数据包类型以及对于结束的判断上，大体的流程还是一致的。</p>
-<p>需要注意的是，并不是所有网关都会如实返回 ICMP 超时报文。出于安全性考虑，大多数防火墙以及启用了防火墙功能的路由器缺省配置为不返回各种 ICMP 报文，其余路由器或交换机也可被管理员主动修改配置变为不返回 ICMP 报文。因此 Traceroute 程序不一定能拿全所有的沿途网关地址。所以，当某个 TTL 值的数据包得不到响应时，并不能停止这一追踪过程，程序仍然会把 TTL 递增而发出下一个数据包。一直达到默认或用参数指定的追踪限制（maximum_hops）才结束追踪。</p>
+<p><strong>需要注意的是</strong>，并不是所有网关都会如实返回 ICMP 超时报文。出于安全性考虑，大多数防火墙以及启用了防火墙功能的路由器缺省配置为不返回各种 ICMP 报文，其余路由器或交换机也可被管理员主动修改配置变为不返回 ICMP 报文。因此 Traceroute 程序不一定能拿全所有的沿途网关地址。所以，当某个 TTL 值的数据包得不到响应时，并不能停止这一追踪过程，程序仍然会把 TTL 递增而发出下一个数据包。一直达到默认或用参数指定的追踪限制（maximum_hops）才结束追踪。</p>
 <p>依据上述原理，利用了 UDP 数据包的 Traceroute 程序在数据包到达真正的目的主机时，就可能因为该主机没有提供 UDP 服务而简单将数据包抛弃，并不返回任何信息。为了解决这个问题，Traceroute 故意使用了一个大于 30000 的端口号，因 UDP 协议规定端口号必须小于 30000，所以目标主机收到数据包后唯一能做的事就是返回一个“端口不可达”的 ICMP 报文，于是主叫方就将端口不可达报文当作跟踪结束的标志。</p>
 <p>在Windows系统中也有traceroute程序，它的名字叫做<code>tracert</code>，<code>tracert</code>就是用采用这种方法来实现的。</p>
 <p><img src="/images/2021-7-11151446.png" alt="2021-7-11151446.png"></p>
